@@ -6,7 +6,8 @@
 typedef enum{
     VAL_BOOL,
     VAL_NIL,
-    VAL_NUMBER
+    VAL_NUMBER,
+    VAL_OBJ
 } ValueType;
 
 typedef struct {
@@ -34,6 +35,7 @@ typedef struct {
   Value* values;
 } ValueArray;
 
+bool valuesEqual(Value a, Value b);
 void initValueArray(ValueArray* array);
 void writeValueArray(ValueArray* array, Value value);
 void freeValueArray(ValueArray* array);
